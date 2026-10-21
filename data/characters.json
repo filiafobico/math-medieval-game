@@ -1,0 +1,124 @@
+{
+  "characters": [
+    {
+      "name": "Viajante",
+      "title": "O Viajante Misterioso",
+      "description": "Viajante que propõe um enigma matemático aos homens que encontra à beira da estrada, oferecendo uma recompensa a quem descobrir a resposta.",
+      "avatar": "viajante_portrait.png",
+      "personality": "Enigmático, confiante e desafiador",
+      "role": "quest_giver"
+    },
+    {
+      "name": "Homens",
+      "title": "Os Homens da Estrada",
+      "description": "Grupo de homens que descansa à beira da estrada e tenta resolver o desafio proposto pelo viajante.",
+      "avatar": "homens_portrait.png",
+      "personality": "Curiosos, intrigados e persistentes",
+      "role": "supporting"
+    },
+    {
+      "name": "Mercador",
+      "title": "O Mercador de Pedra Velha",
+      "description": "Mercador preocupado que precisa comprar exatamente cem porcos gastando cem denários e pede ajuda para resolver o problema.",
+      "avatar": "mercador_portrait.png",
+      "personality": "Prático, preocupado e esperançoso",
+      "role": "quest_giver"
+    },
+    {
+      "name": "Aventureiro",
+      "title": "O Aventureiro",
+      "description": "Viajante que ajuda os personagens que encontra pelo caminho a resolver desafios matemáticos em troca de recompensas.",
+      "avatar": "aventureiro_portrait.png",
+      "personality": "Observador, engenhoso e perseverante",
+      "role": "protagonist"
+    },
+    {
+      "name": "Guardião",
+      "title": "O Guardião do Tesouro",
+      "description": "Guardião das ruínas de um antigo castelo que apresenta o desafio de identificar uma moeda falsa usando uma balança de dois pratos.",
+      "avatar": "guardiao_portrait.png",
+      "personality": "Vigilante, misterioso e rigoroso",
+      "role": "quest_giver"
+    },
+    {
+      "name": "Lorenzo",
+      "title": "O Viajante Lorenzo",
+      "description": "Viajante que passeia pelos jardins de um castelo e tenta descobrir quantas donzelas estão realmente no jardim.",
+      "avatar": "lorenzo_portrait.png",
+      "personality": "Curioso, observador e impressionável",
+      "role": "protagonist"
+    },
+    {
+      "name": "Donzela",
+      "title": "A Donzela do Jardim",
+      "description": "Uma das donzelas que propõe a Lorenzo um enigma sobre a quantidade de moças no jardim.",
+      "avatar": "donzela_portrait.png",
+      "personality": "Perspicaz, espirituosa e confiante",
+      "role": "quest_giver"
+    },
+    {
+      "name": "Sábio",
+      "title": "O Sábio da Ponte",
+      "description": "Guardião de um antigo símbolo matemático que desafia o aventureiro a descobrir o número ausente no centro do nó encantado.",
+      "avatar": "sabio_portrait.png",
+      "personality": "Enigmático, paciente e sábio",
+      "role": "quest_giver"
+    },
+    {
+      "name": "Astrônomo",
+      "title": "O Astrônomo Antigo",
+      "description": "Astrônomo que deixou um mapa celeste incompleto com constelações que seguem padrões a serem descobertos.",
+      "avatar": "astronomo_portrait.png",
+      "personality": "Meticuloso, contemplativo e misterioso",
+      "role": "quest_giver"
+    },
+    {
+      "name": "Marek",
+      "title": "O Jovem Viajante",
+      "description": "Jovem que viaja para a cidade de Knieja e precisa entender como o tempo passado do lado de fora da carruagem determina seu desconto.",
+      "avatar": "marek_portrait.png",
+      "personality": "Determinado, econômico e paciente",
+      "role": "protagonist"
+    },
+    {
+      "name": "Cocheiro",
+      "title": "O Cocheiro",
+      "description": "Condutor da carruagem que oferece a Marek um desconto proporcional ao tempo que ele passa no banco externo.",
+      "avatar": "cocheiro_portrait.png",
+      "personality": "Prático, justo e atento",
+      "role": "supporting"
+    },
+    {
+      "name": "Caçador",
+      "title": "O Caçador",
+      "description": "Caçador que observa a perseguição entre um cão e uma lebre e transforma a situação em um problema de proporcionalidade.",
+      "avatar": "cacador_portrait.png",
+      "personality": "Atento, calculista e desafiador",
+      "role": "quest_giver"
+    },
+    {
+      "name": "Lebre",
+      "title": "A Lebre em Fuga",
+      "description": "Lebre que foge pela floresta enquanto um cão mais veloz tenta alcançá-la.",
+      "avatar": "lebre_portrait.png",
+      "personality": "Ágil, alerta e instintiva",
+      "role": "supporting"
+    },
+    {
+      "name": "Feiticeiro",
+      "title": "O Feiticeiro da Ilha",
+      "description": "Feiticeiro que aprisiona cem viajantes e propõe um desafio lógico sobre a cor dos chapéus, a dedução e o conhecimento compartilhado.",
+      "avatar": "feiticeiro_portrait.png",
+      "personality": "Enigmático, calculista e autoritário",
+      "role": "antagonist"
+    },
+    {
+      "name": "Prisioneiros",
+      "title": "Os Cem Prisioneiros",
+      "description": "Grupo de viajantes que precisa deduzir a cor de seus próprios chapéus observando os chapéus dos demais e raciocinando sobre a informação compartilhada.",
+      "avatar": "prisioneiros_portrait.png",
+      "personality": "Inteligentes, cautelosos e racionais",
+      "role": "supporting"
+    }
+  ]
+}

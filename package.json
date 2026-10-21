@@ -1,0 +1,42 @@
+{
+  "name": "matematica-medieval",
+  "version": "1.0.0",
+  "description": "Jogo educativo de desafios matemáticos em um cenário medieval",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server . -p 8080 -c-1 -o",
+    "dev": "npx http-server . -p 8080 -c-1 -o --cors",
+    "serve": "http-server . -p 8080"
+  },
+  "keywords": [
+    "game",
+    "educational",
+    "math",
+    "phaser",
+    "javascript",
+    "medieval",
+    "matematica-medieval"
+  ],
+  "author": "Desenvolvedor Educacional",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seu-usuario/matematica-medieval.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seu-usuario/matematica-medieval/issues"
+  },
+  "homepage": "https://github.com/seu-usuario/matematica-medieval#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

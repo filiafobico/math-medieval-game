@@ -1,0 +1,388 @@
+{
+  "levels": [
+    {
+      "id": 1,
+      "title": "O Viajante Misterioso",
+      "background": "level_1_bg",
+      "backgroundImage": "level_1_bg",
+      "characters": [
+        "Viajante",
+        "Homens"
+      ],
+      "story": [
+        {
+          "character": "Viajante",
+          "text": "Caros senhores, imaginem que, além de vocês, houvesse na estrada outro grupo com a mesma quantidade de homens. Agora, acrescentem metade dessa quantidade e, depois, metade dessa última parcela. Se eu também estivesse entre todos nós, seríamos exatamente cem pessoas!"
+        },
+        {
+          "character": "Homens",
+          "text": "Começamos a fazer contas, mas não conseguimos chegar a uma resposta."
+        },
+        {
+          "character": "Viajante",
+          "text": "Aquele que descobrir quantos homens encontrei poderá seguir comigo até o próximo vilarejo, onde uma recompensa o aguarda!"
+        }
+      ],
+      "question": "Quantos homens o viajante encontrou na estrada?",
+      "options": [
+        "32 homens",
+        "36 homens",
+        "40 homens",
+        "42 homens"
+      ],
+      "correctIndex": 1,
+      "explanation": [
+        {
+          "character": "Viajante",
+          "text": "Se x é a quantidade inicial de homens, a situação descrita pode ser representada por x + x + x/2 + x/4 + 1 = 100."
+        },
+        {
+          "character": "Viajante",
+          "text": "Somando os termos, temos 11x/4 + 1 = 100. Portanto, 11x/4 = 99 e x = 36."
+        },
+        {
+          "character": "Viajante",
+          "text": "Conferindo: 36 + 36 + 18 + 9 + 1 = 100. A resposta é 36 homens."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "O Mercador e os cem porcos",
+      "background": "level_2_bg",
+      "backgroundImage": "level_2_bg",
+      "characters": [
+        "Mercador",
+        "Aventureiro"
+      ],
+      "story": [
+        {
+          "character": "Mercador",
+          "text": "Preciso comprar exatamente cem porcos para abastecer as fazendas do reino. Tenho cem denários, mas os animais custam preços diferentes."
+        },
+        {
+          "character": "Mercador",
+          "text": "Um javali custa dez denários, uma porca custa cinco, e dois leitões custam apenas um denário."
+        },
+        {
+          "character": "Mercador",
+          "text": "Preciso levar cem animais e gastar exatamente cem denários. Se conseguir descobrir quantos animais de cada tipo devo comprar, darei a você uma recompensa."
+        }
+      ],
+      "question": "Quantos javalis, quantas porcas e quantos leitões o mercador deve comprar para obter exatamente cem animais, gastando exatamente cem denários?",
+      "options": [
+        "1 javali, 9 porcas e 90 leitões",
+        "5 javalis, 5 porcas e 90 leitões",
+        "2 javalis, 18 porcas e 80 leitões",
+        "10 javalis, 10 porcas e 80 leitões"
+      ],
+      "correctIndex": 0,
+      "explanation": [
+        {
+          "character": "Aventureiro",
+          "text": "Uma solução é comprar 1 javali, 9 porcas e 90 leitões."
+        },
+        {
+          "character": "Aventureiro",
+          "text": "Total de animais: 1 + 9 + 90 = 100."
+        },
+        {
+          "character": "Aventureiro",
+          "text": "Custo: 1×10 + 9×5 + (90÷2) = 10 + 45 + 45 = 100 denários."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "A moeda falsa do tesouro",
+      "background": "level_3_bg",
+      "backgroundImage": "level_3_bg",
+      "characters": [
+        "Guardião",
+        "Aventureiro"
+      ],
+      "story": [
+        {
+          "character": "Guardião",
+          "text": "Entre estas nove moedas aparentemente idênticas, uma é falsa e pesa um pouco menos que as outras."
+        },
+        {
+          "character": "Guardião",
+          "text": "Você pode usar uma balança de dois pratos, mas precisa descobrir a moeda falsa com o menor número possível de pesagens."
+        }
+      ],
+      "question": "Qual é o menor número de pesagens necessárias para identificar a moeda falsa entre as nove moedas?",
+      "options": [
+        "1 pesagem",
+        "2 pesagens",
+        "3 pesagens",
+        "4 pesagens"
+      ],
+      "correctIndex": 1,
+      "explanation": [
+        {
+          "character": "Aventureiro",
+          "text": "Divida as nove moedas em três grupos de três."
+        },
+        {
+          "character": "Aventureiro",
+          "text": "Pese um grupo de três contra outro grupo de três. Se houver equilíbrio, a moeda falsa está no terceiro grupo; caso contrário, está no grupo mais leve."
+        },
+        {
+          "character": "Aventureiro",
+          "text": "Com a segunda pesagem, compare duas moedas do grupo suspeito. Se equilibrar, a terceira é falsa; caso contrário, a mais leve é falsa."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "As donzelas do jardim",
+      "background": "level_4_bg",
+      "backgroundImage": "level_4_bg",
+      "characters": [
+        "Lorenzo",
+        "Donzela"
+      ],
+      "story": [
+        {
+          "character": "Lorenzo",
+          "text": "Por minha vida! Dez lindas donzelas enfileiradas! Tal beleza nunca antes havia sonhado em vislumbrar!"
+        },
+        {
+          "character": "Donzela",
+          "text": "Senhor viajante, não somos dez, como imagina. Se fôssemos duas vezes mais numerosas do que somos de fato, a quantidade acima de dez seria igual à quantidade que nos falta para chegar a dez neste momento."
+        }
+      ],
+      "question": "Quantas donzelas estavam descansando no jardim?",
+      "options": [
+        "4 donzelas",
+        "5 donzelas",
+        "6 donzelas",
+        "O enigma não tem solução inteira como está escrito"
+      ],
+      "correctIndex": 3,
+      "explanation": [
+        {
+          "character": "Donzela",
+          "text": "Se x é o número de donzelas, a quantidade acima de dez ao dobrar o grupo seria 2x − 10."
+        },
+        {
+          "character": "Donzela",
+          "text": "A quantidade que falta para chegar a dez agora é 10 − x. O enigma afirma que essas quantidades são iguais: 2x − 10 = 10 − x."
+        },
+        {
+          "character": "Donzela",
+          "text": "Resolvendo, 3x = 20 e x = 20/3. Como não é possível haver uma fração de donzela, o enigma, tal como está escrito no PDF, não tem solução inteira."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "O segredo do nó encantado",
+      "background": "level_5_bg",
+      "backgroundImage": "level_5_bg",
+      "characters": [
+        "Sábio",
+        "Aventureiro"
+      ],
+      "story": [
+        {
+          "character": "Sábio",
+          "text": "Este é um dos nós encantados dos antigos matemáticos. Cada número foi colocado aqui seguindo uma regra muito especial."
+        },
+        {
+          "character": "Sábio",
+          "text": "O espaço no centro está vazio. Se deseja atravessar a ponte e continuar sua jornada, precisará descobrir o número que falta!"
+        }
+      ],
+      "question": "Observando os números ao redor do nó, qual número deveria estar no centro do símbolo?",
+      "options": [],
+      "correctIndex": -1,
+      "explanation": [
+        {
+          "character": "Sábio",
+          "text": "O PDF não informa os números que aparecem no desenho do nó. É necessário incluir a imagem original ou transcrever os números e a posição deles para definir as alternativas e a resposta correta."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "O mapa das estrelas perdidas",
+      "background": "level_6_bg",
+      "backgroundImage": "level_6_bg",
+      "characters": [
+        "Astrônomo",
+        "Aventureiro"
+      ],
+      "story": [
+        {
+          "character": "Astrônomo",
+          "text": "Encontrei um mapa celeste com constelações incompletas. Cada constelação segue uma lógica, e algumas estrelas parecem estar faltando."
+        },
+        {
+          "character": "Astrônomo",
+          "text": "Deixei este trabalho incompleto de propósito, para que somente os viajantes mais atentos pudessem descobrir o segredo das estrelas."
+        }
+      ],
+      "question": "Quantas estrelas estão faltando para completar o padrão do mapa?",
+      "options": [],
+      "correctIndex": -1,
+      "explanation": [
+        {
+          "character": "Astrônomo",
+          "text": "O PDF descreve o padrão, mas não apresenta os grupos de estrelas ou uma sequência numérica legível para determinar a quantidade que falta. É necessário acrescentar o desenho original do desafio."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "O enigma da pedra esquecida",
+      "background": "level_7_bg",
+      "backgroundImage": "level_7_bg",
+      "characters": [
+        "Aventureiro",
+        "Sábio"
+      ],
+      "story": [
+        {
+          "character": "Aventureiro",
+          "text": "Encontrei uma pedra antiga na floresta, com um símbolo semelhante a um nó e diversos números."
+        },
+        {
+          "character": "Sábio",
+          "text": "Os antigos sábios escondiam seus conhecimentos nas pedras da floresta. Quem compreender a relação entre os números descobrirá o segredo no centro do símbolo."
+        }
+      ],
+      "question": "Qual número deveria estar no centro do símbolo gravado na pedra?",
+      "options": [],
+      "correctIndex": -1,
+      "explanation": [
+        {
+          "character": "Sábio",
+          "text": "O PDF não transcreve os números presentes no símbolo. Para definir a resposta, é necessário usar a imagem original da página 7 ou informar os números e suas posições."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "A viagem de Marek",
+      "background": "level_8_bg",
+      "backgroundImage": "level_8_bg",
+      "characters": [
+        "Marek",
+        "Cocheiro"
+      ],
+      "story": [
+        {
+          "character": "Marek",
+          "text": "Preciso chegar à cidade de Knieja, mas não tenho dinheiro suficiente para pagar uma passagem confortável."
+        },
+        {
+          "character": "Cocheiro",
+          "text": "Você receberá um desconto proporcional ao tempo que viajar no banco externo da carruagem."
+        },
+        {
+          "character": "Marek",
+          "text": "Depois de algum tempo do lado de fora, um passageiro desembarcou e pude voltar para dentro quando ainda faltava metade do tempo que eu havia passado do lado de fora."
+        }
+      ],
+      "question": "Durante que fração da viagem Marek ficou sentado no lado externo da carruagem?",
+      "options": [],
+      "correctIndex": -1,
+      "explanation": [
+        {
+          "character": "Cocheiro",
+          "text": "O enunciado diz que Marek ficou do lado de fora e voltou para dentro quando ainda faltava metade do tempo que ele permaneceu do lado de fora, mas a relação entre esse intervalo e o tempo total da viagem não fica suficientemente clara."
+        },
+        {
+          "character": "Cocheiro",
+          "text": "Com as informações apresentadas no PDF, não é possível determinar com segurança uma única fração da viagem. É necessário esclarecer a duração da viagem antes e depois do período em que Marek ficou do lado de fora."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "A lebre e o cão",
+      "background": "level_9_bg",
+      "backgroundImage": "level_9_bg",
+      "characters": [
+        "Caçador",
+        "Lebre"
+      ],
+      "story": [
+        {
+          "character": "Caçador",
+          "text": "Quando o cão começou a correr, a lebre estava a cinquenta metros de distância."
+        },
+        {
+          "character": "Caçador",
+          "text": "A lebre correu 125 metros enquanto o cão tentava alcançá-la. Se, no início da perseguição, a lebre estivesse a apenas trinta metros do cão, quantos metros ela teria de percorrer antes de ser alcançada?"
+        }
+      ],
+      "question": "Quantos metros a lebre percorreria antes de ser alcançada pelo cão, caso a distância inicial entre eles fosse de trinta metros?",
+      "options": [
+        "50 metros",
+        "75 metros",
+        "100 metros",
+        "125 metros"
+      ],
+      "correctIndex": 1,
+      "explanation": [
+        {
+          "character": "Caçador",
+          "text": "A lebre percorreu 125 metros enquanto o cão fechava uma distância inicial de 50 metros. A distância percorrida até o alcance é proporcional à distância inicial."
+        },
+        {
+          "character": "Caçador",
+          "text": "Com uma distância inicial de 30 metros, a lebre percorreria 125 × (30/50) = 75 metros."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Os cem chapéus verdes",
+      "background": "level_10_bg",
+      "backgroundImage": "level_10_bg",
+      "characters": [
+        "Feiticeiro",
+        "Prisioneiros"
+      ],
+      "story": [
+        {
+          "character": "Feiticeiro",
+          "text": "Aprisionei cem viajantes em uma ilha distante. Cada um usa um chapéu verde ou vermelho, mas ninguém pode ver a própria cor."
+        },
+        {
+          "character": "Feiticeiro",
+          "text": "Vocês veem os chapéus dos outros, não podem conversar nem trocar sinais, e a cada meia-noite quem souber com certeza a própria cor deve se apresentar."
+        },
+        {
+          "character": "Feiticeiro",
+          "text": "Pelo menos um de vocês está usando um chapéu verde!"
+        }
+      ],
+      "question": "Se todos os cem prisioneiros estão usando chapéus verdes, em qual noite eles descobrirão a cor de seus próprios chapéus e conseguirão escapar?",
+      "options": [
+        "Na 1ª noite",
+        "Na 50ª noite",
+        "Na 99ª noite",
+        "Na 100ª noite"
+      ],
+      "correctIndex": 3,
+      "explanation": [
+        {
+          "character": "Prisioneiros",
+          "text": "A dica de que pelo menos uma pessoa usa chapéu verde inicia o raciocínio por indução."
+        },
+        {
+          "character": "Prisioneiros",
+          "text": "Se houvesse apenas uma pessoa de chapéu verde, ela veria apenas chapéus vermelhos e concluiria na primeira noite que seu próprio chapéu é verde."
+        },
+        {
+          "character": "Prisioneiros",
+          "text": "Com cem pessoas de chapéu verde, cada uma espera pelas conclusões das outras. Como ninguém sai nas primeiras 99 noites, todos concluem na 100ª noite que também usam chapéus verdes."
+        }
+      ]
+    }
+  ]
+}

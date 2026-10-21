@@ -1,0 +1,253 @@
+// Story scene for Matemática Medieval
+// Displays narrative content and character dialogue for each level
+
+class StoryScene extends Phaser.Scene {
+    constructor() {
+        super({ key: 'StoryScene' });
+        this.gameController = null;
+        this.dialogueSystem = null;
+        this.currentLevel = null;
+    }
+
+    create() {
+        // Get game controller reference
+        this.gameController = this.registry.get('gameController');
+
+        // Get current level data
+        this.currentLevel = this.gameController.getCurrentLevel();
+
+        if (!this.currentLevel) {
+            console.error('Nenhum nível encontrado');
+            this.scene.start('IntroScene');
+            return;
+        }
+
+        // Create scene
+        this.createBackground();
+        this.createUI();
+        this.setupDialogueSystem();
+        this.startStory();
+    }
+
+    // Create background based on level setting
+    createBackground() {
+        const { width, height } = this.sys.game.config;
+
+        // Try to use background image first
+        try {
+            // Use the backgroundImage from level configuration
+            const backgroundKey = this.currentLevel.backgroundImage || 'desert-caravan';
+
+            const bgImage = this.add.image(width / 2, height / 2, backgroundKey);
+            bgImage.setDisplaySize(width, height);
+        } catch (error) {
+            console.warn('⚠️ Fallback para background programático:', error);
+        }
+    }
+
+    // Add desert decorations
+    addDesertDecorations() {
+        const { width, height } = this.sys.game.config;
+
+        const decorations = this.add.graphics();
+        decorations.fillStyle(0x8B4513, 0.6);
+
+        // Sand dunes
+        for (let i = 0; i < 4; i++) {
+            const x = (i * width / 3) + 100;
+            const y = height - 200;
+            decorations.fillEllipse(x, y, 200, 80);
+        }
+
+        // Simple sun
+        decorations.fillStyle(GameConfig.COLORS.SECONDARY, 0.8);
+        decorations.fillCircle(width - 100, 100, 50);
+    }
+
+    // Add palace decorations
+    addPalaceDecorations() {
+        const { width, height } = this.sys.game.config;
+
+        const decorations = this.add.graphics();
+        decorations.lineStyle(3, GameConfig.COLORS.SECONDARY, 0.8);
+
+        // Arches
+        for (let i = 0; i < 3; i++) {
+            const x = 150 + (i * 250);
+            decorations.strokeCircle(x, height - 100, 60);
+            decorations.strokeRect(x - 60, height - 160, 120, 120);
+        }
+    }
+
+    // Add market decorations
+    addMarketDecorations() {
+        const { width, height } = this.sys.game.config;
+
+        const decorations = this.add.graphics();
+        decorations.fillStyle(GameConfig.COLORS.SECONDARY, 0.6);
+
+        // Market tents
+        for (let i = 0; i < 4; i++) {
+            const x = 100 + (i * 200);
+            const y = height - 150;
+            // Triangle tent shape
+            decorations.fillTriangle(x, y - 80, x - 60, y, x + 60, y);
+        }
+    }
+
+    // Create story UI elements
+    createUI() {
+        const { width } = this.sys.game.config;
+
+        // Level title
+        this.levelTitle = this.add.text(width / 2, 80, this.currentLevel.title, {
+            fontSize: '28px',
+            fill: GameConfig.COLORS.SECONDARY,
+            fontFamily: 'Arial, serif',
+            fontStyle: 'bold',
+            stroke: '#000000',
+            strokeThickness: 2
+        });
+        this.levelTitle.setOrigin(0.5);
+        this.levelTitle.setAlpha(0);
+
+        // Adventure indicator + menu button (top-left)
+        const menuBtnW = 44;
+        const menuBtnH = 36;
+        const menuBtnX = 20;
+        const menuBtnY = 20;
+
+        this.menuButton = this.add.graphics();
+        this.menuButton.fillStyle(0x000000, 0.7);
+        this.menuButton.lineStyle(2, GameConfig.COLORS.SECONDARY, 0.9);
+        this.menuButton.fillRoundedRect(menuBtnX, menuBtnY, menuBtnW, menuBtnH, 6);
+        this.menuButton.strokeRoundedRect(menuBtnX, menuBtnY, menuBtnW, menuBtnH, 6);
+        this.menuButton.setDepth(20);
+        this.menuButton.setAlpha(0);
+        this.menuButton.setInteractive(
+            new Phaser.Geom.Rectangle(menuBtnX, menuBtnY, menuBtnW, menuBtnH),
+            Phaser.Geom.Rectangle.Contains
+        );
+
+        this.menuButtonText = this.add.text(menuBtnX + menuBtnW / 2, menuBtnY + menuBtnH / 2, '☰', {
+            fontSize: '20px',
+            fill: '#d4af37',
+            fontFamily: 'Arial, sans-serif'
+        }).setOrigin(0.5).setDepth(20).setAlpha(0);
+
+        this.menuButton.on('pointerover', () => {
+            this.input.setDefaultCursor('pointer');
+            this.menuButton.clear();
+            this.menuButton.fillStyle(0x333333, 0.9);
+            this.menuButton.lineStyle(2, GameConfig.COLORS.SECONDARY, 1);
+            this.menuButton.fillRoundedRect(menuBtnX, menuBtnY, menuBtnW, menuBtnH, 6);
+            this.menuButton.strokeRoundedRect(menuBtnX, menuBtnY, menuBtnW, menuBtnH, 6);
+        });
+
+        this.menuButton.on('pointerout', () => {
+            this.input.setDefaultCursor('default');
+            this.menuButton.clear();
+            this.menuButton.fillStyle(0x000000, 0.7);
+            this.menuButton.lineStyle(2, GameConfig.COLORS.SECONDARY, 0.9);
+            this.menuButton.fillRoundedRect(menuBtnX, menuBtnY, menuBtnW, menuBtnH, 6);
+            this.menuButton.strokeRoundedRect(menuBtnX, menuBtnY, menuBtnW, menuBtnH, 6);
+        });
+
+        this.menuButton.on('pointerdown', () => {
+            this.input.setDefaultCursor('default');
+            this.cameras.main.fadeOut(GameConfig.ANIMATIONS.FADE_DURATION, 0, 0, 0);
+            this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, () => {
+                this.scene.start('LevelSelectScene');
+            });
+        });
+
+        // Adventure number label (right of the menu button)
+        this.levelIndicator = this.add.text(menuBtnX + menuBtnW + 10, menuBtnY + menuBtnH / 2,
+            `Aventura ${this.currentLevel.id}/${this.gameController.getMaxLevels()}`, {
+            fontSize: '16px',
+            fill: '#ffffff',
+            fontFamily: 'Arial, sans-serif',
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            padding: { x: 10, y: 5 }
+        }).setOrigin(0, 0.5).setDepth(20).setAlpha(0);
+
+        // Animate UI elements
+        this.tweens.add({
+            targets: [this.levelTitle, this.levelIndicator, this.menuButton, this.menuButtonText],
+            alpha: { from: 0, to: 1 },
+            duration: GameConfig.ANIMATIONS.FADE_DURATION,
+            ease: 'Power2'
+        });
+    }
+
+    // Setup dialogue system
+    setupDialogueSystem() {
+        this.dialogueSystem = new DialogueSystem(this);
+    }
+
+    // Start the story dialogue
+    startStory() {
+        // Convert story text to dialogue format
+        const dialogues = this.createStoryDialogues();
+
+        // Start dialogue sequence
+        this.dialogueSystem.startDialogue(dialogues, () => {
+            this.moveToQuestion();
+        });
+    }
+
+    // Convert level story into dialogue format
+    createStoryDialogues() {
+        const dialogues = [];
+
+        // Add narrator introduction
+        dialogues.push({
+            character: 'Narrador',
+            text: `Aventura ${this.currentLevel.id}: ${this.currentLevel.title}`
+        });
+
+        // Add story parts - now using character and text from configuration
+        this.currentLevel.story.forEach((storyPart) => {
+            if (typeof storyPart === 'object' && storyPart.character && storyPart.text) {
+                // New format with configured character
+                dialogues.push({
+                    character: storyPart.character,
+                    text: storyPart.text
+                });
+            } else {
+                // Fallback for old format (simple string)
+                dialogues.push({
+                    character: 'Narrador',
+                    text: typeof storyPart === 'string' ? storyPart : storyPart.text
+                });
+            }
+        });
+
+        // Add transition to question
+        dialogues.push({
+            character: 'Aventureiro',
+            text: 'Vamos analisar este desafio com atenção...'
+        });
+
+        return dialogues;
+    }
+
+    // Move to question scene
+    moveToQuestion() {
+        // Fade out animation
+        this.cameras.main.fadeOut(GameConfig.ANIMATIONS.FADE_DURATION, 0, 0, 0);
+
+        this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, () => {
+            // Start question scene
+            this.scene.start('QuestionScene');
+        });
+    }
+
+    // Cleanup
+    destroy() {
+        if (this.dialogueSystem) {
+            this.dialogueSystem.destroy();
+        }
+        super.destroy();
+    }
+}
