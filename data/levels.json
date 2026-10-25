@@ -182,16 +182,16 @@
       "background": "level_5_bg",
       "backgroundImage": "level_5_bg",
       "characters": [
-        "Sábio",
+        "Sabio",
         "Aventureiro"
       ],
       "story": [
         {
-          "character": "Sábio",
+          "character": "Sabio",
           "text": "Este é um dos nós encantados dos antigos matemáticos. Cada número foi colocado aqui seguindo uma regra muito especial."
         },
         {
-          "character": "Sábio",
+          "character": "Sabio",
           "text": "O espaço no centro está vazio. Se deseja atravessar a ponte e continuar sua jornada, precisará descobrir o número que falta!"
         }
       ],
@@ -200,7 +200,7 @@
       "correctIndex": -1,
       "explanation": [
         {
-          "character": "Sábio",
+          "character": "Sabio",
           "text": "O PDF não informa os números que aparecem no desenho do nó. É necessário incluir a imagem original ou transcrever os números e a posição deles para definir as alternativas e a resposta correta."
         }
       ]
@@ -241,7 +241,7 @@
       "backgroundImage": "level_7_bg",
       "characters": [
         "Aventureiro",
-        "Sábio"
+        "Sabio"
       ],
       "story": [
         {
@@ -249,8 +249,8 @@
           "text": "Encontrei uma pedra antiga na floresta, com um símbolo semelhante a um nó e diversos números."
         },
         {
-          "character": "Sábio",
-          "text": "Os antigos sábios escondiam seus conhecimentos nas pedras da floresta. Quem compreender a relação entre os números descobrirá o segredo no centro do símbolo."
+          "character": "Sabio",
+          "text": "Os antigos Sabios escondiam seus conhecimentos nas pedras da floresta. Quem compreender a relação entre os números descobrirá o segredo no centro do símbolo."
         }
       ],
       "question": "Qual número deveria estar no centro do símbolo gravado na pedra?",
@@ -258,7 +258,7 @@
       "correctIndex": -1,
       "explanation": [
         {
-          "character": "Sábio",
+          "character": "Sabio",
           "text": "O PDF não transcreve os números presentes no símbolo. Para definir a resposta, é necessário usar a imagem original da página 7 ou informar os números e suas posições."
         }
       ]

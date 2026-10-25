@@ -13,6 +13,8 @@ class DialogueSystem {
         this.fullText = '';      // Full text of current dialogue for skip
         this.textTimer = null;   // Reference to active typing timer
 
+        this.widthTextFromPortrait = 230;
+
         this.createDialogueUI();
     }
 
@@ -32,7 +34,7 @@ class DialogueSystem {
         this.portrait = null;
 
         // Character name text
-        this.nameText = this.scene.add.text(210, height - 230, '', {
+        this.nameText = this.scene.add.text(this.widthTextFromPortrait, height - 230, '', {
             fontSize: '22px',
             fill: '#d4af37', // Golden color for better contrast on dark background
             fontFamily: 'Arial, serif',
@@ -41,7 +43,7 @@ class DialogueSystem {
         this.nameText.setVisible(false);
 
         // Dialogue text
-        this.dialogueText = this.scene.add.text(210, height - 200, '', {
+        this.dialogueText = this.scene.add.text(this.widthTextFromPortrait, height - 200, '', {
             fontSize: '20px',
             fill: '#ffffff',
             fontFamily: 'Arial, sans-serif',
@@ -251,8 +253,8 @@ class DialogueSystem {
 
         try {
             // Try to load real character image
-            this.portrait = this.scene.add.image(130, height - 170, portraitKey);
-            this.portrait.setDisplaySize(140, 140);
+            this.portrait = this.scene.add.image(140, height - 160, portraitKey);
+            this.portrait.setDisplaySize(160, 160);
             this.portrait.setVisible(this.isDisplaying);
 
             // Check if image loaded successfully
@@ -267,8 +269,7 @@ class DialogueSystem {
                 this.portrait.destroy();
             }
             this.portrait = this.scene.add.graphics();
-            const color = this.getCharacterColor(characterName);
-            this.portrait.fillStyle(color, 0.8);
+            this.portrait.fillStyle('0xFF8C00', 0.8);
             this.portrait.fillCircle(130, height - 170, 70);
             this.portrait.setVisible(this.isDisplaying);
         }
@@ -277,7 +278,7 @@ class DialogueSystem {
     // Get portrait key from character name
     getPortraitKey(characterName) {
         const normalizedName = characterName.toLowerCase();
-        const portraitKey = `${normalizedName}-portrait`;
+        const portraitKey = `${normalizedName}_portrait`;
 
         // Verify if texture exists
         const hasTexture = this.scene.textures.exists(portraitKey);
@@ -287,25 +288,6 @@ class DialogueSystem {
         }
 
         return portraitKey;
-    }
-
-    // Get fallback color for character
-    getCharacterColor(characterName) {
-        const colorMap = {
-            'mercador': 0xFF8C00,     // Dark orange
-            'califa': 0x9932CC,       // Dark orchid
-            'poeta': 0xDC143C,        // Crimson
-            'sabio': 0x8B4513,        // Saddle brown
-            'vendedor': 0xB8860B,     // Dark goldenrod
-            'oleiro': 0xA0522D,       // Sienna
-            'raja': 0x4B0082,         // Indigo
-            'inventor': 0x2E8B57,     // Sea green
-            'vizir': 0x708090,        // Slate gray
-            'princesa': 0xC71585,     // Medium violet red
-            'pretendente': 0x1E90FF,  // Dodger blue
-        };
-        const normalizedName = characterName.toLowerCase();
-        return colorMap[normalizedName] || GameConfig.COLORS.ACCENT;
     }
 
     // Show dialogue UI elements

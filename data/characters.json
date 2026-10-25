@@ -1,10 +1,18 @@
 {
   "characters": [
     {
+      "name": "Narrador",
+      "title": "O Narrador",
+      "description": "O sabe-tudo",
+      "avatar": "narrador_portrait.png",
+      "personality": "O sabe-tudo",
+      "role": "narrator"
+    },
+    {
       "name": "Viajante",
       "title": "O Viajante Misterioso",
       "description": "Viajante que propõe um enigma matemático aos homens que encontra à beira da estrada, oferecendo uma recompensa a quem descobrir a resposta.",
-      "avatar": "viajante_portrait.png",
+      "avatar": "viajante_portrait.jpeg",
       "personality": "Enigmático, confiante e desafiador",
       "role": "quest_giver"
     },
@@ -12,7 +20,7 @@
       "name": "Homens",
       "title": "Os Homens da Estrada",
       "description": "Grupo de homens que descansa à beira da estrada e tenta resolver o desafio proposto pelo viajante.",
-      "avatar": "homens_portrait.png",
+      "avatar": "homens_portrait.jpeg",
       "personality": "Curiosos, intrigados e persistentes",
       "role": "supporting"
     },
@@ -20,7 +28,7 @@
       "name": "Mercador",
       "title": "O Mercador de Pedra Velha",
       "description": "Mercador preocupado que precisa comprar exatamente cem porcos gastando cem denários e pede ajuda para resolver o problema.",
-      "avatar": "mercador_portrait.png",
+      "avatar": "mercador_portrait.jpeg",
       "personality": "Prático, preocupado e esperançoso",
       "role": "quest_giver"
     },
@@ -36,7 +44,7 @@
       "name": "Guardião",
       "title": "O Guardião do Tesouro",
       "description": "Guardião das ruínas de um antigo castelo que apresenta o desafio de identificar uma moeda falsa usando uma balança de dois pratos.",
-      "avatar": "guardiao_portrait.png",
+      "avatar": "guardiao_portrait.jpeg",
       "personality": "Vigilante, misterioso e rigoroso",
       "role": "quest_giver"
     },
@@ -57,10 +65,10 @@
       "role": "quest_giver"
     },
     {
-      "name": "Sábio",
+      "name": "Sabio",
       "title": "O Sábio da Ponte",
       "description": "Guardião de um antigo símbolo matemático que desafia o aventureiro a descobrir o número ausente no centro do nó encantado.",
-      "avatar": "sabio_portrait.png",
+      "avatar": "sabio_portrait.jpeg",
       "personality": "Enigmático, paciente e sábio",
       "role": "quest_giver"
     },
@@ -76,7 +84,7 @@
       "name": "Marek",
       "title": "O Jovem Viajante",
       "description": "Jovem que viaja para a cidade de Knieja e precisa entender como o tempo passado do lado de fora da carruagem determina seu desconto.",
-      "avatar": "marek_portrait.png",
+      "avatar": "marek_portrait.jpeg",
       "personality": "Determinado, econômico e paciente",
       "role": "protagonist"
     },
@@ -108,7 +116,7 @@
       "name": "Feiticeiro",
       "title": "O Feiticeiro da Ilha",
       "description": "Feiticeiro que aprisiona cem viajantes e propõe um desafio lógico sobre a cor dos chapéus, a dedução e o conhecimento compartilhado.",
-      "avatar": "feiticeiro_portrait.png",
+      "avatar": "feiticeiro_portrait.jpeg",
       "personality": "Enigmático, calculista e autoritário",
       "role": "antagonist"
     },
