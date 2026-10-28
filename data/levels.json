@@ -98,16 +98,16 @@
       "background": "level_3_bg",
       "backgroundImage": "level_3_bg",
       "characters": [
-        "Guardião",
+        "Guardiao",
         "Aventureiro"
       ],
       "story": [
         {
-          "character": "Guardião",
+          "character": "Guardiao",
           "text": "Entre estas nove moedas aparentemente idênticas, uma é falsa e pesa um pouco menos que as outras."
         },
         {
-          "character": "Guardião",
+          "character": "Guardiao",
           "text": "Você pode usar uma balança de dois pratos, mas precisa descobrir a moeda falsa com o menor número possível de pesagens."
         }
       ],

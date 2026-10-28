@@ -15,21 +15,26 @@ class IntroScene extends Phaser.Scene {
         this.load.image('mercador_portrait', 'assets/mercador_portrait.jpeg');
         this.load.image('sabio_portrait', 'assets/sabio_portrait.jpeg');
         this.load.image('viajante_portrait', 'assets/viajante_portrait.jpeg');
-
-        this.load.image('narrador_portrait', 'assets/narrador_portrait.png');
-        this.load.image('aventureiro_portrait', 'assets/aventureiro_portrait.png');
+        this.load.image('aventureiro_portrait', 'assets/aventureiro_portrait.jpeg');
+        this.load.image('lorenzo_portrait', 'assets/lorenzo_portrait.jpeg');
+        this.load.image('donzela_portrait', 'assets/donzela_portrait.jpeg');
+        this.load.image('astronomo_portrait', 'assets/astronomo_portrait.jpeg');
+        this.load.image('cocheiro_portrait', 'assets/cocheiro_portrait.jpeg');
+        this.load.image('cacador_portrait', 'assets/cacador_portrait.jpeg');
+        this.load.image('lebre_portrait', 'assets/lebre_portrait.jpeg');
+        this.load.image('prisioneiros_portrait', 'assets/prisioneiros_portrait.jpeg');
 
         // Load background images
-        // this.load.image('level_1_bg', 'assets/level_1_bg.png');
-        // this.load.image('level_2_bg', 'assets/level_2_bg.png');
-        // this.load.image('level_3_bg', 'assets/level_3_bg.png');
-        // this.load.image('level_4_bg', 'assets/level_4_bg.png');
-        // this.load.image('level_5_bg', 'assets/level_5_bg.png');
-        // this.load.image('level_6_bg', 'assets/level_6_bg.png');
-        // this.load.image('level_7_bg', 'assets/level_7_bg.png');
-        // this.load.image('level_8_bg', 'assets/level_8_bg.png');
-        // this.load.image('level_9_bg', 'assets/level_9_bg.png');
-        // this.load.image('level_10_bg', 'assets/level_10_bg.png');
+        this.load.image('level_1_bg', 'assets/level_1_bg.jpeg');
+        this.load.image('level_2_bg', 'assets/level_2_bg.jpeg');
+        this.load.image('level_3_bg', 'assets/level_3_bg.jpeg');
+        this.load.image('level_4_bg', 'assets/level_4_bg.jpeg');
+        this.load.image('level_5_bg', 'assets/level_5_bg.jpeg');
+        this.load.image('level_6_bg', 'assets/level_6_bg.jpeg');
+        this.load.image('level_7_bg', 'assets/level_7_bg.jpeg');
+        this.load.image('level_8_bg', 'assets/level_8_bg.jpeg');
+        this.load.image('level_9_bg', 'assets/level_9_bg.jpeg');
+        this.load.image('level_10_bg', 'assets/level_10_bg.jpeg');
 
         // Load result background images
         // this.load.image('success', 'assets/success.png');

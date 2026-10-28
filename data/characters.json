@@ -36,7 +36,7 @@
       "name": "Aventureiro",
       "title": "O Aventureiro",
       "description": "Viajante que ajuda os personagens que encontra pelo caminho a resolver desafios matemáticos em troca de recompensas.",
-      "avatar": "aventureiro_portrait.png",
+      "avatar": "aventureiro_portrait.jpeg",
       "personality": "Observador, engenhoso e perseverante",
       "role": "protagonist"
     },
@@ -52,7 +52,7 @@
       "name": "Lorenzo",
       "title": "O Viajante Lorenzo",
       "description": "Viajante que passeia pelos jardins de um castelo e tenta descobrir quantas donzelas estão realmente no jardim.",
-      "avatar": "lorenzo_portrait.png",
+      "avatar": "lorenzo_portrait.jpeg",
       "personality": "Curioso, observador e impressionável",
       "role": "protagonist"
     },
@@ -60,7 +60,7 @@
       "name": "Donzela",
       "title": "A Donzela do Jardim",
       "description": "Uma das donzelas que propõe a Lorenzo um enigma sobre a quantidade de moças no jardim.",
-      "avatar": "donzela_portrait.png",
+      "avatar": "donzela_portrait.jpeg",
       "personality": "Perspicaz, espirituosa e confiante",
       "role": "quest_giver"
     },
@@ -76,7 +76,7 @@
       "name": "Astrônomo",
       "title": "O Astrônomo Antigo",
       "description": "Astrônomo que deixou um mapa celeste incompleto com constelações que seguem padrões a serem descobertos.",
-      "avatar": "astronomo_portrait.png",
+      "avatar": "astronomo_portrait.jpeg",
       "personality": "Meticuloso, contemplativo e misterioso",
       "role": "quest_giver"
     },
@@ -92,7 +92,7 @@
       "name": "Cocheiro",
       "title": "O Cocheiro",
       "description": "Condutor da carruagem que oferece a Marek um desconto proporcional ao tempo que ele passa no banco externo.",
-      "avatar": "cocheiro_portrait.png",
+      "avatar": "cocheiro_portrait.jpeg",
       "personality": "Prático, justo e atento",
       "role": "supporting"
     },
@@ -100,7 +100,7 @@
       "name": "Caçador",
       "title": "O Caçador",
       "description": "Caçador que observa a perseguição entre um cão e uma lebre e transforma a situação em um problema de proporcionalidade.",
-      "avatar": "cacador_portrait.png",
+      "avatar": "cacador_portrait.jpeg",
       "personality": "Atento, calculista e desafiador",
       "role": "quest_giver"
     },
@@ -108,7 +108,7 @@
       "name": "Lebre",
       "title": "A Lebre em Fuga",
       "description": "Lebre que foge pela floresta enquanto um cão mais veloz tenta alcançá-la.",
-      "avatar": "lebre_portrait.png",
+      "avatar": "lebre_portrait.jpeg",
       "personality": "Ágil, alerta e instintiva",
       "role": "supporting"
     },
@@ -124,7 +124,7 @@
       "name": "Prisioneiros",
       "title": "Os Cem Prisioneiros",
       "description": "Grupo de viajantes que precisa deduzir a cor de seus próprios chapéus observando os chapéus dos demais e raciocinando sobre a informação compartilhada.",
-      "avatar": "prisioneiros_portrait.png",
+      "avatar": "prisioneiros_portrait.jpeg",
       "personality": "Inteligentes, cautelosos e racionais",
       "role": "supporting"
     }
