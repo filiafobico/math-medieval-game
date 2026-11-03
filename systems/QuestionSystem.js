@@ -14,11 +14,13 @@ class QuestionSystem {
         this.questionElements = [];
         this.optionButtons = [];
         this.optionTexts = [];
+        this.answerInput = null;
     }
 
     // Display a question with multiple choice options
     displayQuestion(questionData, onAnswer = null) {
         this.question = questionData.question;
+        this.questionData = questionData;
         this.options = questionData.options;
         this.correctIndex = questionData.correctIndex;
         this.onAnswer = onAnswer;
@@ -59,7 +61,60 @@ class QuestionSystem {
         this.questionElements.push(questionText);
 
         // Create option buttons
-        this.createOptionButtons();
+        if (this.options.length > 0) {
+            this.createOptionButtons();
+        } else {
+            this.createFreeResponseInput();
+        }
+    }
+
+    // Create a text field for questions without predefined options
+    createFreeResponseInput() {
+        const { width } = this.scene.sys.game.config;
+        if (this.questionData.hintImage && this.scene.textures.exists(this.questionData.hintImage)) {
+            const hint = this.scene.add.image(width / 2, 270, this.questionData.hintImage);
+            const source = hint.texture.getSourceImage();
+            const scale = Math.min(340 / source.width, 225 / source.height);
+            hint.setScale(scale);
+            hint.setAlpha(0);
+            this.questionElements.push(hint);
+        }
+
+        const form = this.scene.add.dom(width / 2.4, 390).createFromHTML(`
+            <form style="display:flex;gap:10px;align-items:center;width:600px;max-width:calc(100vw - 160px);margin:0 auto;">
+                <input name="answer" type="text" aria-label="Sua resposta" placeholder="Digite sua resposta" autocomplete="off"
+                    style="flex:1;min-width:0;padding:14px 16px;border:2px solid #d4af37;border-radius:8px;background:#fff;color:#222;font:18px Arial,sans-serif;">
+                <button type="submit" style="padding:14px 20px;border:2px solid #d4af37;border-radius:8px;background:#704214;color:#fff;font:bold 16px Arial,sans-serif;cursor:pointer;">Responder</button>
+            </form>
+        `);
+        form.setAlpha(0);
+        this.answerInput = form;
+        this.questionElements.push(form);
+
+        const formElement = form.node;
+        const input = formElement.querySelector('input');
+        formElement.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const answer = input.value.trim();
+            if (!answer || this.isAnswered) return;
+
+            this.isAnswered = true;
+            input.disabled = true;
+            formElement.querySelector('button').disabled = true;
+            const expectedAnswer = this.questionData.correctAnswer;
+            const isCorrect = expectedAnswer
+                ? this.normalizeAnswer(answer) === this.normalizeAnswer(expectedAnswer)
+                : false;
+
+            this.scene.time.delayedCall(300, () => {
+                if (this.onAnswer) this.onAnswer(-1, isCorrect, answer);
+            });
+        });
+        this.scene.time.delayedCall(GameConfig.ANIMATIONS.FADE_DURATION, () => input.focus());
+    }
+
+    normalizeAnswer(answer) {
+        return String(answer).trim().toLocaleLowerCase('pt-BR').replace(/\s+/g, ' ');
     }
 
     // Create multiple choice option buttons

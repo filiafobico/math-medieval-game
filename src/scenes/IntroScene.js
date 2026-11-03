@@ -36,6 +36,11 @@ class IntroScene extends Phaser.Scene {
         this.load.image('level_9_bg', 'assets/level_9_bg.jpeg');
         this.load.image('level_10_bg', 'assets/level_10_bg.jpeg');
 
+        // Hints shown alongside the free-response fields for levels 5 to 7
+        this.load.image('dica_5', 'assets/dica_5.jpeg');
+        this.load.image('dica_6', 'assets/dica_6.jpeg');
+        this.load.image('dica_7', 'assets/dica_7.jpeg');
+
         // Load result background images
         // this.load.image('success', 'assets/success.png');
         // this.load.image('error', 'assets/error.png');

@@ -11,6 +11,9 @@ class CalculavaGame {
             type: Phaser.AUTO,
             width: GameConfig.WIDTH,
             height: GameConfig.HEIGHT,
+            // Render at the display's pixel density so the canvas stays sharp
+            // when Phaser scales the game to high-resolution screens.
+            resolution: Math.min(window.devicePixelRatio || 1, 2),
             parent: 'game-container',
             backgroundColor: GameConfig.COLORS.BACKGROUND,
             scene: [
@@ -43,6 +46,9 @@ class CalculavaGame {
                     gravity: { y: 0 },
                     debug: false
                 }
+            },
+            dom: {
+                createContainer: true
             }
         };
 

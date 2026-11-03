@@ -161,23 +161,31 @@ class QuestionScene extends Phaser.Scene {
         const questionData = {
             question: this.currentLevel.question,
             options: this.currentLevel.options,
-            correctIndex: this.currentLevel.correctIndex
+            correctIndex: this.currentLevel.correctIndex,
+            correctAnswer: this.currentLevel.correctAnswer,
+            hintImage: this.currentLevel.id === 6
+                ? 'dica_7'
+                : this.currentLevel.id === 7
+                    ? 'dica_6'
+                    : this.currentLevel.id === 5
+                        ? 'dica_5'
+                        : null
         };
 
         // Display question with callback
-        this.questionSystem.displayQuestion(questionData, (selectedIndex, isCorrect) => {
-            this.handleAnswer(selectedIndex, isCorrect);
+        this.questionSystem.displayQuestion(questionData, (selectedIndex, isCorrect, answer) => {
+            this.handleAnswer(selectedIndex, isCorrect, answer);
         });
     }
 
     // Handle answer selection
-    handleAnswer(selectedIndex, isCorrect) {
+    handleAnswer(selectedIndex, isCorrect, answer = null) {
         // Store result
         this.questionResult = {
             selectedIndex: selectedIndex,
             isCorrect: isCorrect,
-            selectedAnswer: this.currentLevel.options[selectedIndex],
-            correctAnswer: this.currentLevel.options[this.currentLevel.correctIndex]
+            selectedAnswer: answer ?? this.currentLevel.options[selectedIndex],
+            correctAnswer: this.currentLevel.options[this.currentLevel.correctIndex] ?? this.currentLevel.correctAnswer ?? null
         };
 
         // Show feedback animation

@@ -34,11 +34,11 @@
       "explanation": [
         {
           "character": "Viajante",
-          "text": "Se x é a quantidade inicial de homens, a situação descrita pode ser representada por x + x + x/2 + x/4 + 1 = 100."
+          "text": "Chamando de x o número de homens encontrados, contamos dois grupos com x homens, mais metade de x, mais metade dessa metade e o viajante: x + x + x/2 + x/4 + 1 = 100."
         },
         {
           "character": "Viajante",
-          "text": "Somando os termos, temos 11x/4 + 1 = 100. Portanto, 11x/4 = 99 e x = 36."
+          "text": "Somando os termos, obtemos 11x/4 + 1 = 100. Tiramos 1 dos dois lados: 11x/4 = 99. Multiplicando por 4 e dividindo por 11, x = 36."
         },
         {
           "character": "Viajante",
@@ -80,7 +80,7 @@
       "explanation": [
         {
           "character": "Aventureiro",
-          "text": "Uma solução é comprar 1 javali, 9 porcas e 90 leitões."
+          "text": "A combinação correta é 1 javali, 9 porcas e 90 leitões. Vamos conferir as duas condições do problema."
         },
         {
           "character": "Aventureiro",
@@ -130,7 +130,7 @@
         },
         {
           "character": "Aventureiro",
-          "text": "Com a segunda pesagem, compare duas moedas do grupo suspeito. Se equilibrar, a terceira é falsa; caso contrário, a mais leve é falsa."
+          "text": "Na segunda pesagem, compare duas moedas do grupo suspeito. Se a balança equilibrar, a moeda que ficou de fora é a falsa. Se pender, a moeda falsa é a mais leve das duas. Assim, são suficientes duas pesagens."
         }
       ]
     },
@@ -172,7 +172,7 @@
         },
         {
           "character": "Donzela",
-          "text": "Resolvendo, 3x = 20 e x = 20/3. Como não é possível haver uma fração de donzela, o enigma, tal como está escrito no PDF, não tem solução inteira."
+          "text": "Resolvendo a igualdade, 3x = 20 e x = 20/3, aproximadamente 6,67. Como a quantidade de donzelas precisa ser um número inteiro, não há solução inteira para o enigma tal como foi escrito."
         }
       ]
     },
@@ -198,10 +198,15 @@
       "question": "Observando os números ao redor do nó, qual número deveria estar no centro do símbolo?",
       "options": [],
       "correctIndex": -1,
+      "correctAnswer": "32",
       "explanation": [
         {
           "character": "Sabio",
-          "text": "O PDF não informa os números que aparecem no desenho do nó. É necessário incluir a imagem original ou transcrever os números e a posição deles para definir as alternativas e a resposta correta."
+          "text": "Compare os números que ficam em posições opostas no nó: 24 e 8, 20 e 12, 16 e 16. Cada par soma 32."
+        },
+        {
+          "character": "Sabio",
+          "text": "Como os três pares opostos seguem a mesma regra, o número que completa o centro é 32."
         }
       ]
     },
@@ -230,7 +235,11 @@
       "explanation": [
         {
           "character": "Astrônomo",
-          "text": "O PDF descreve o padrão, mas não apresenta os grupos de estrelas ou uma sequência numérica legível para determinar a quantidade que falta. É necessário acrescentar o desenho original do desafio."
+          "text": "Observe os grupos de estrelas desenhados na pedra. Para descobrir quantas faltam, é preciso comparar as quantidades de cada grupo e identificar a regra que o mapa segue."
+        },
+        {
+          "character": "Astrônomo",
+          "text": "A imagem mostra os grupos, mas não marca uma constelação incompleta nem informa a regra do padrão. Sem essa informação, não há uma única quantidade de estrelas faltantes que possa ser deduzida com segurança."
         }
       ]
     },
@@ -259,7 +268,11 @@
       "explanation": [
         {
           "character": "Sabio",
-          "text": "O PDF não transcreve os números presentes no símbolo. Para definir a resposta, é necessário usar a imagem original da página 7 ou informar os números e suas posições."
+          "text": "A imagem mostra os números 38, 9, 14, 13, 11 e 3 ao redor do centro vazio. Primeiro, observe como esses valores se relacionam pelas posições e pelos caminhos do nó."
+        },
+        {
+          "character": "Sabio",
+          "text": "O desenho não informa explicitamente a regra que liga os números ao centro. Como diferentes regras podem ser ajustadas a esses valores, a imagem sozinha não determina uma resposta única; o enunciado precisa indicar a relação matemática pretendida."
         }
       ]
     },
@@ -292,11 +305,11 @@
       "explanation": [
         {
           "character": "Cocheiro",
-          "text": "O enunciado diz que Marek ficou do lado de fora e voltou para dentro quando ainda faltava metade do tempo que ele permaneceu do lado de fora, mas a relação entre esse intervalo e o tempo total da viagem não fica suficientemente clara."
+          "text": "Sabemos que Marek voltou para dentro quando ainda faltava metade do tempo que havia passado do lado de fora. Porém, o enunciado não informa quanto tempo durou a viagem nem quando esse período externo começou."
         },
         {
           "character": "Cocheiro",
-          "text": "Com as informações apresentadas no PDF, não é possível determinar com segurança uma única fração da viagem. É necessário esclarecer a duração da viagem antes e depois do período em que Marek ficou do lado de fora."
+          "text": "Sem saber a duração total da viagem e a duração do trecho externo, não é possível calcular uma fração única. O problema precisa informar esses tempos ou uma relação adicional entre eles."
         }
       ]
     },
@@ -330,7 +343,7 @@
       "explanation": [
         {
           "character": "Caçador",
-          "text": "A lebre percorreu 125 metros enquanto o cão fechava uma distância inicial de 50 metros. A distância percorrida até o alcance é proporcional à distância inicial."
+          "text": "Na primeira situação, a lebre percorreu 125 metros para o cão reduzir uma vantagem de 50 metros. Mantendo as mesmas velocidades, a distância que a lebre percorre é proporcional à vantagem inicial."
         },
         {
           "character": "Caçador",
@@ -376,11 +389,11 @@
         },
         {
           "character": "Prisioneiros",
-          "text": "Se houvesse apenas uma pessoa de chapéu verde, ela veria apenas chapéus vermelhos e concluiria na primeira noite que seu próprio chapéu é verde."
+          "text": "Com uma única pessoa de chapéu verde, ela veria somente chapéus vermelhos. Como foi anunciado que existe ao menos um chapéu verde, concluiria na primeira noite que o seu é verde."
         },
         {
           "character": "Prisioneiros",
-          "text": "Com cem pessoas de chapéu verde, cada uma espera pelas conclusões das outras. Como ninguém sai nas primeiras 99 noites, todos concluem na 100ª noite que também usam chapéus verdes."
+          "text": "O raciocínio se repete por indução: se fossem 99 chapéus verdes, os 99 prisioneiros concluiriam na 99ª noite. Como ninguém sai nessa noite, cada um dos cem percebe que também usa verde. Todos se apresentam na 100ª noite."
         }
       ]
     }
