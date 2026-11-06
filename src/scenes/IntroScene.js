@@ -20,9 +20,10 @@ class IntroScene extends Phaser.Scene {
         this.load.image('donzela_portrait', 'assets/donzela_portrait.jpeg');
         this.load.image('astronomo_portrait', 'assets/astronomo_portrait.jpeg');
         this.load.image('cocheiro_portrait', 'assets/cocheiro_portrait.jpeg');
-        this.load.image('cacador_portrait', 'assets/cacador_portrait.jpeg');
+        this.load.image('caçador_portrait', 'assets/cacador_portrait.jpeg');
         this.load.image('lebre_portrait', 'assets/lebre_portrait.jpeg');
         this.load.image('prisioneiros_portrait', 'assets/prisioneiros_portrait.jpeg');
+        this.load.image('narrador_portrait', 'assets/narrador_portrait.jpeg');
 
         // Load background images
         this.load.image('level_1_bg', 'assets/level_1_bg.jpeg');
@@ -42,11 +43,11 @@ class IntroScene extends Phaser.Scene {
         this.load.image('dica_7', 'assets/dica_7.jpeg');
 
         // Load result background images
-        // this.load.image('success', 'assets/success.png');
-        // this.load.image('error', 'assets/error.png');
+        this.load.image('success', 'assets/success.jpeg');
+        this.load.image('error', 'assets/error.jpeg');
 
         // Load initial screen image
-        this.load.image('init-screen', 'assets/init_screen.png');
+        this.load.image('init-screen', 'assets/init.jpeg');
 
         // Load placeholder assets as fallback
         this.loadPlaceholderAssets();
@@ -96,58 +97,55 @@ class IntroScene extends Phaser.Scene {
         }
     }
 
-    // Create intro UI elements - minimal interface since image contains the visuals
+    // Create visible intro buttons over the background image
     createIntroUI() {
         const { width, height } = this.sys.game.config;
-        const button_params = [width / 2 - 400, height / 2 - 20, 350, 60];
-        // Only create start button as invisible clickable area - image provides the visual button
-        const startButton = this.add.graphics();
-        startButton.fillStyle(0x000000, 0); // Transparent
-        startButton.fillRect(...button_params); // Adjust position to match image button
+        const buttonWidth = 300;
+        const buttonHeight = 58;
+        const buttonX = (width - buttonWidth) / 2;
 
-        // Make button interactive
-        startButton.setInteractive(
-            new Phaser.Geom.Rectangle(...button_params),
-            Phaser.Geom.Rectangle.Contains
-        );
+        const createButton = (label, y, onClick) => {
+            const button = this.add.graphics();
+            const drawButton = (hovered = false) => {
+                button.clear();
+                button.fillStyle(hovered ? 0x704214 : 0x2c1810, 0.92);
+                button.lineStyle(hovered ? 3 : 2, GameConfig.COLORS.SECONDARY, 1);
+                button.fillRoundedRect(buttonX, y, buttonWidth, buttonHeight, 12);
+                button.strokeRoundedRect(buttonX, y, buttonWidth, buttonHeight, 12);
+            };
 
-        // Button click - start game
-        startButton.on('pointerdown', () => {
-            this.startGame();
-        });
+            drawButton();
+            button.setInteractive(
+                new Phaser.Geom.Rectangle(buttonX, y, buttonWidth, buttonHeight),
+                Phaser.Geom.Rectangle.Contains
+            );
 
-        startButton.on('pointerover', () => {
-            this.input.setDefaultCursor('pointer');
-        });
+            this.add.text(width / 2, y + buttonHeight / 2, label, {
+                fontSize: '22px',
+                fill: '#ffffff',
+                fontFamily: 'Arial, serif',
+                fontStyle: 'bold',
+                stroke: '#000000',
+                strokeThickness: 2
+            }).setOrigin(0.5);
 
-        startButton.on('pointerout', () => {
-            this.input.setDefaultCursor('default');
-        });
+            button.on('pointerover', () => {
+                this.input.setDefaultCursor('pointer');
+                drawButton(true);
+            });
+            button.on('pointerout', () => {
+                this.input.setDefaultCursor('default');
+                drawButton();
+            });
+            button.on('pointerdown', onClick);
+        };
 
-        // Credits button — invisible hit area matching image position
-        const credits_params = [width / 2 - 350, height / 2 + 60, 230, 55];
-        const creditsButton = this.add.graphics();
-        creditsButton.fillStyle(0x000000, 0);
-        creditsButton.fillRect(...credits_params);
-
-        creditsButton.setInteractive(
-            new Phaser.Geom.Rectangle(...credits_params),
-            Phaser.Geom.Rectangle.Contains
-        );
-
-        creditsButton.on('pointerdown', () => {
+        createButton('Iniciar jogo', height - 150, () => this.startGame());
+        createButton('Créditos', height - 78, () => {
             this.cameras.main.fadeOut(GameConfig.ANIMATIONS.FADE_DURATION, 0, 0, 0);
             this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, () => {
                 this.scene.start('CreditsScene');
             });
-        });
-
-        creditsButton.on('pointerover', () => {
-            this.input.setDefaultCursor('pointer');
-        });
-
-        creditsButton.on('pointerout', () => {
-            this.input.setDefaultCursor('default');
         });
     }
 

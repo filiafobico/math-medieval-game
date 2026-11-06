@@ -37,13 +37,13 @@ class CreditsScene extends Phaser.Scene {
 
         // Credits content
         const contentX = width / 2;
-        const startY = 150;
-        const lineH = 48;
+        const startY = 125;
+        const lineH = 45;
 
         const entries = [
             { label: 'Projeto de Extensão', value: 'Pegaí Leituras Grátis' },
             { label: 'Orientação', value: 'Dra. Diolete Marcante Lati Cerutti' },
-            { label: 'Desenvolvimento', value: 'Luiç Oliveira' },
+            { label: 'Desenvolvimento', value: 'Luiç Oliveira; Arthur Aguiar; Pedro Henrique' },
             { label: 'Jogo', value: 'Matemática Medieval' },
             { label: 'UEPG', value: 'Universidade Estadual de Ponta Grossa' },
         ];
@@ -61,7 +61,7 @@ class CreditsScene extends Phaser.Scene {
             }).setOrigin(0.5);
 
             this.add.text(contentX, y + 20, entry.value, {
-                fontSize: '20px',
+                fontSize: '18px',
                 fill: '#ffffff',
                 fontFamily: 'Arial, serif',
                 stroke: '#000000',

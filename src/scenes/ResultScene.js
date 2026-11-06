@@ -63,6 +63,22 @@ class ResultScene extends Phaser.Scene {
             const bgImage = this.add.image(width / 2, height / 2, backgroundKey);
             bgImage.setDisplaySize(width, height);
             bgImage.setAlpha(0.9); // Slightly transparent for text readability
+            bgImage.setDepth(-2);
+
+            // Show the current level artwork inside the central white panel.
+            const levelImageKey = this.currentLevel.backgroundImage || this.currentLevel.background;
+            const panel = { x: 240, y: 174, width: 550, height: 220 };
+            if (levelImageKey && this.textures.exists(levelImageKey)) {
+                const levelImage = this.add.image(
+                    panel.x + panel.width / 2,
+                    panel.y + panel.height / 2,
+                    levelImageKey
+                );
+                const source = levelImage.texture.getSourceImage();
+                const scale = 1.5 * Math.min(panel.width / source.width, panel.height / source.height);
+                levelImage.setDisplaySize(source.width * scale, source.height * scale);
+                levelImage.setDepth(-1);
+            }
         } catch (error) {
             console.warn(`⚠️ Fallback para background programático:`, error);
 
